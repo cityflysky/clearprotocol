@@ -3,19 +3,80 @@
     <div class="content-box">
       <div class="left-content-box">
         <div class="left-header">
-          <div class="name">
-            BTC/USDC
-          </div>
-          <div class="select-box">
-            Contract
-          </div>
+
+          <a-dropdown>
+            <template #overlay>
+              <a-menu @click="handleMenuClick">
+                <a-menu-item key="1">
+                  <div>
+                    <svg t="1677824350805" class="icon" viewBox="0 0 1029 1024" version="1.1"
+                         xmlns="http://www.w3.org/2000/svg" p-id="2818" width="20" height="20">
+                      <path
+                          d="M1024.727025 511.98976c0 282.771945-229.217816 511.98976-511.98976 511.98976-282.766825 0-511.98976-229.217816-511.98976-511.98976 0-282.766825 229.222936-511.98976 511.98976-511.98976 282.771945 0 511.98976 229.222936 511.98976 511.98976"
+                          fill="#F7931A" p-id="2819"></path>
+                      <path
+                          d="M637.048379 661.623888a55.842723 55.842723 0 0 1-27.145697 33.417571 55.858083 55.858083 0 0 1-42.827943 4.444071l-144.181437-42.940581 32.122238-107.840403 144.171196 42.945701h0.00512c29.726125 8.852303 46.713946 40.242395 37.856523 69.973641m48.628787-221.00038a55.929761 55.929761 0 0 1 4.438952 42.833063c-8.857423 29.721006-40.262875 46.698586-69.973641 37.861643h-0.00512l-144.176316-42.940582 32.111998-107.840403 144.181436 42.940581a55.888802 55.888802 0 0 1 33.422691 27.145698m64.54143-34.917702c-16.48095-30.458271-43.836563-52.678626-77.01862-62.560029l-19.076738-5.677966 26.705385-89.669887-68.519589-20.407912-26.705386 89.669887-58.49995-17.423012 26.710506-89.669886-16.414392-4.889503-66.49723-19.803763-25.742845 86.434111-81.037739-24.135197-22.870583 76.798464 81.037739 24.140317-83.254655 279.536169-81.037739-24.135197-22.870583 76.803584 81.03262 24.130077-21.723726 72.953421 16.409272 4.889502 66.49723 19.803764 22.691386-76.189196 58.638188 17.463971-22.691387 76.194316 68.243116 20.325993 22.691386-76.194316 19.209856 5.718926a130.255315 130.255315 0 0 0 37.185816 5.452691c21.247575 0 42.295474-5.278614 61.51045-15.677127 30.458271-16.48095 52.673507-43.831443 62.560028-77.023739 10.393392-34.912582 5.263255-70.777464-11.268894-100.298794 30.01284-15.661767 53.927881-42.935461 64.331513-77.863403 9.886522-33.192296 6.251395-68.243115-10.224435-98.696266"
+                          fill="#FFFFFF" p-id="2820"></path>
+                    </svg>
+                    <span>
+                        BTCUSDT
+                      </span>
+                  </div>
+
+                </a-menu-item>
+                <a-menu-item key="2">
+                  <div>
+                    <svg t="1677824451359" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                         xmlns="http://www.w3.org/2000/svg" p-id="3915" width="20" height="20">
+                      <path
+                          d="M512.099961 0.399844c282.689574 0 511.800078 229.110504 511.800078 511.800078s-229.110504 511.800078-511.800078 511.800078S0.299883 794.889496 0.299883 512.199922 229.510348 0.399844 512.099961 0.399844z"
+                          fill="#3E5BF2" p-id="3916"></path>
+                      <path
+                          d="M512.199922 147.242483v510.000781l224.112456-134.34752zM512.199922 877.15736l224.112456-321.774307-224.112456 135.547052zM512.199922 147.242483v510.000781L287.987505 522.895744z"
+                          fill="#FFFFFF" p-id="3917"></path>
+                      <path d="M512.199922 690.930105v186.227255L287.987505 555.383053z" fill="#FFFFFF"
+                            p-id="3918"></path>
+                    </svg>
+                    <span>
+                        ETHUSDT
+                      </span>
+                  </div>
+
+                </a-menu-item>
+
+              </a-menu>
+            </template>
+            <a class="ant-dropdown-link " @click.prevent>
+              <div class="coin-box">
+                <svg t="1677824350805" class="icon" viewBox="0 0 1029 1024" version="1.1"
+                     xmlns="http://www.w3.org/2000/svg" p-id="2818" width="20" height="20">
+                  <path
+                      d="M1024.727025 511.98976c0 282.771945-229.217816 511.98976-511.98976 511.98976-282.766825 0-511.98976-229.217816-511.98976-511.98976 0-282.766825 229.222936-511.98976 511.98976-511.98976 282.771945 0 511.98976 229.222936 511.98976 511.98976"
+                      fill="#F7931A" p-id="2819"></path>
+                  <path
+                      d="M637.048379 661.623888a55.842723 55.842723 0 0 1-27.145697 33.417571 55.858083 55.858083 0 0 1-42.827943 4.444071l-144.181437-42.940581 32.122238-107.840403 144.171196 42.945701h0.00512c29.726125 8.852303 46.713946 40.242395 37.856523 69.973641m48.628787-221.00038a55.929761 55.929761 0 0 1 4.438952 42.833063c-8.857423 29.721006-40.262875 46.698586-69.973641 37.861643h-0.00512l-144.176316-42.940582 32.111998-107.840403 144.181436 42.940581a55.888802 55.888802 0 0 1 33.422691 27.145698m64.54143-34.917702c-16.48095-30.458271-43.836563-52.678626-77.01862-62.560029l-19.076738-5.677966 26.705385-89.669887-68.519589-20.407912-26.705386 89.669887-58.49995-17.423012 26.710506-89.669886-16.414392-4.889503-66.49723-19.803763-25.742845 86.434111-81.037739-24.135197-22.870583 76.798464 81.037739 24.140317-83.254655 279.536169-81.037739-24.135197-22.870583 76.803584 81.03262 24.130077-21.723726 72.953421 16.409272 4.889502 66.49723 19.803764 22.691386-76.189196 58.638188 17.463971-22.691387 76.194316 68.243116 20.325993 22.691386-76.194316 19.209856 5.718926a130.255315 130.255315 0 0 0 37.185816 5.452691c21.247575 0 42.295474-5.278614 61.51045-15.677127 30.458271-16.48095 52.673507-43.831443 62.560028-77.023739 10.393392-34.912582 5.263255-70.777464-11.268894-100.298794 30.01284-15.661767 53.927881-42.935461 64.331513-77.863403 9.886522-33.192296 6.251395-68.243115-10.224435-98.696266"
+                      fill="#FFFFFF" p-id="2820"></path>
+                </svg>
+                {{ curSymbol }}
+
+
+              </div>
+              <div class="contract">
+                Contract
+                <a-icon type="down"/>
+              </div>
+            </a>
+
+          </a-dropdown>
+
+
         </div>
         <div class="left-content">
           <div class="flex-box">
-            <button class="operate sell">
+            <button class="operate buy">
               Buy (Long)
             </button>
-            <button class="operate buy">
+            <button class="operate  sell">
               Sell (Short)
             </button>
           </div>
@@ -37,10 +98,8 @@
               Leverage
             </div>
             <div class="progress-box">
-              <div class="progress" @dragover.prevent @drop="onDrop">
-                <div class="progress-bar" :style="{ width: progress + '%' }"></div>
-              </div>
-              <div class="reset">
+              <a-slider v-model="slideValue" style="width: 100%"/>
+              <div class="reset" @click="slideValue=0">
                 reset
               </div>
             </div>
@@ -52,16 +111,16 @@
             </div>
             <div class="slippage-box">
               <div class="slippage-input">
-                <input type="number">
+                <input type="number" v-model="slipValue">
                 <span>%</span>
               </div>
-              <div class="rate-btn">
+              <div class="rate-btn" @click="slipValue=1">
                 1%
               </div>
-              <div class="rate-btn">
+              <div class="rate-btn"  @click="slipValue=1.5">
                 1.5%
               </div>
-              <div class="rate-btn">
+              <div class="rate-btn"  @click="slipValue=2">
                 2%
               </div>
             </div>
@@ -217,10 +276,10 @@
                 0.00
               </div>
               <div class="col operate-box">
-                <button class="operate">
+                <button class="operate" @click="isShowMarginManage=true">
                   Margin Manage
                 </button>
-                <button class="operate">
+                <button class="operate" @click="isShowClosePosition=true">
                   Close
                 </button>
               </div>
@@ -359,21 +418,52 @@
         </div>
       </div>
     </div>
+    <MarginManage v-show="isShowMarginManage" @closeMarginManage="isShowMarginManage = false"/>
+    <ClosePositions  v-show="isShowClosePosition" @closeClosePosition="isShowClosePosition = false"/>
   </div>
 </template>
 
 <script>
+
+import MarginManage from "@/components/MarginManage";
+import ClosePositions from "@/components/ClosePositions";
 export default {
   name: 'HomeView',
+  components: {
+    MarginManage,
+    ClosePositions
+  },
   data() {
     return {
+      isShowClosePosition:false,
+      isShowMarginManage:false,
+      slideValue: 0,
+      slipValue:undefined,
       progress: 10,
       widgetId: 'tradingview_8c9b3',
       widgetHeight: 500,
-      activeNav: 0
+      activeNav: 0,
+      curTVSymbol: "BINANCE:BTCUSDT",
+      curSymbol: "BTC/USDT"
+      //  BINANCE:ETHUSDT
     }
   },
   methods: {
+    handleMenuClick(e) {
+      let curTVSymbol = "", curSymbol = ""
+      if (e.key == 1) {
+        curTVSymbol = "BINANCE:BTCUSDT"
+        curSymbol = "BTC/USDT"
+      } else if (e.key == 2) {
+        curTVSymbol = "BINANCE:ETHUSDT"
+        curSymbol = "ETH/USDT"
+      }
+      if (curTVSymbol != this.curTVSymbol) {
+        this.curTVSymbol = curTVSymbol
+        this.curSymbol = curSymbol
+        this.createWidget()
+      }
+    },
     loadTradingViewScript() {
       if (document.getElementById('tradingview-widget-loading-script')) {
         this.createWidget();
@@ -392,7 +482,7 @@ export default {
       if (document.getElementById(this.widgetId) && window.TradingView) {
         new window.TradingView.widget({
           autosize: true,
-          symbol: 'BINANCE:BTCUSDT',
+          symbol: this.curTVSymbol,
           interval: 'D',
           timezone: 'Etc/UTC',
           theme: 'light',
@@ -402,39 +492,26 @@ export default {
           enable_publishing: false,
           container_id: this.widgetId,
         });
+        // symbol: "CME:ETH1!",
+
       }
     },
-    onDrop(e) {
-      const progress = e.dataTransfer.getData('progress');
-      this.progress = progress;
-    }
+
   },
   mounted() {
     this.loadTradingViewScript();
-    const progressElement = document.querySelector('.progress-bar');
 
-    progressElement.addEventListener('dragstart', e => {
-      e.dataTransfer.setData('progress', this.progress);
-    });
-
-    progressElement.addEventListener('drag', e => {
-      const offsetX = e.clientX - progressElement.getBoundingClientRect().left;
-      const progress = Math.max(Math.min(Math.round(offsetX / progressElement.offsetWidth * 100), 100), 0);
-      this.progress = progress;
-    });
-
-    progressElement.addEventListener('dragend', () => {
-      // Save progress to server or do something else
-    });
   }
 }
 </script>
 <style lang="scss" scoped>
 .home {
   background: #F3F7FF;
-  button{
+
+  button {
     user-select: none;
   }
+
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
     -webkit-appearance: none !important;
@@ -451,17 +528,29 @@ export default {
   input {
     border: none;
     padding: 0 20px;
+    color: #111;
   }
 
+  /*reset antdv */
+  ::v-deep .ant-slider-track {
+    background-color: #0E1D51 !important;
+  }
+  ::v-deep .ant-slider-handle {
+    border: solid 2px #0E1D51;
+  }
+  ::v-deep .ant-slider:hover .ant-slider-handle:not(.ant-tooltip-open) {
+    border-color: #0E1D51;
+  }
+  /*end reset antdv*/
   .content-box {
     min-height: 100vh;
     width: 100%;
     display: flex;
-    padding: 16px;
+    padding: 10px;
 
     .operate {
       cursor: pointer;
-      width: 156px;
+      width: 40%;
       height: 36px;
       background: #63CE63;
       border-radius: 19px;
@@ -481,11 +570,16 @@ export default {
     }
 
     .left-content-box {
-      width: 370px;
-      height: 638px;
+      height: 650px;
       background: #FFFFFF;
       box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
+
+      .sell.operate {
+        background: #FFFFFF;
+        color: #E32A20;
+        border: 1px solid #E32A20;
+      }
 
       .left-header {
         width: 100%;
@@ -493,6 +587,199 @@ export default {
         border: 1px solid #ECECEE;
         display: flex;
         justify-content: space-between;
+
+        .ant-dropdown-link {
+          width: 100%;
+          display: flex;
+
+          align-items: center;
+          justify-content: space-between;
+
+          .contract {
+            font-size: 14px;
+            font-weight: 400;
+            color: #0E1D51;
+            line-height: 17px;
+          }
+        }
+
+        ::v-deep .coin-box {
+          height: 100%;
+          border: none;
+          display: flex !important;
+          align-items: center !important;
+          font-size: 20px;
+          font-family: AvertaStd-Regular, AvertaStd;
+          font-weight: 400;
+          color: #0E1D51;
+          line-height: 25px;
+        }
+      }
+
+      .left-content {
+        padding: 20px 15px;
+      }
+
+      .left-bottom {
+        border-top: 1px solid #ECECEE;
+        padding: 20px 15px;
+
+        .operate {
+          margin-top: 20px;
+          width: 100%;
+          min-width: 220px;
+        }
+      }
+
+      .left-content-item {
+        margin-top: 16px;
+        width: 100%;
+
+        .box-title {
+          font-size: 14px;
+          font-family: AvertaStd-Regular, AvertaStd, sans-serif;
+          font-weight: 400;
+          color: #8F97AA;
+          line-height: 17px;
+          padding-bottom: 6px;
+        }
+
+        .input-box {
+          width: 100%;
+          height: 72px;
+          background: #F2F2F3;
+          border-radius: 18px;
+          overflow: hidden;
+          border: 1px solid #0E1D51;
+
+          .input-part {
+            width: 100%;
+            position: relative;
+            height: 50%;
+
+            input {
+              height: 100%;
+
+              width: 100%;
+              padding: 0 20px;
+            }
+
+            &:nth-child(1) {
+              input {
+                border-radius: 18px 18px 0 0;
+                border-bottom: 1px solid #0E1D51;;
+              }
+            }
+
+            &:nth-child(2) {
+              input {
+                border-radius: 0 0 18px 18px;
+              }
+            }
+
+            span {
+              position: absolute;
+              right: 10px;
+              font-size: 14px;
+              font-family: AvertaStd-Regular, AvertaStd, sans-serif;
+              top: 10px;
+              font-weight: 400;
+              color: #0E1D51;
+              line-height: 17px;
+            }
+          }
+        }
+
+        .progress-box {
+          display: flex;
+          align-items: center;
+
+
+          .reset {
+            margin-left: 6px;
+            width: 52px;
+            height: 20px;
+            border-radius: 13px;
+            border: 1px solid #0E1D51;
+            font-weight: 400;
+            color: #0E1D51;
+            line-height: 15px;
+            text-align: center;
+            cursor: pointer;
+          }
+        }
+
+        .slippage-box {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          .slippage-input {
+            position: relative;
+            width: 100%;
+            height: 34px;
+            background: #F6F6F7;
+            border-radius: 18px;
+            opacity: 0.7;
+            border: 1px solid #0E1D51;
+
+            input {
+              border-radius: 18px;
+              width: 100%;
+              height: 100%;
+            }
+
+            span {
+              position: absolute;
+              right: 10px;
+              font-size: 14px;
+              font-family: AvertaStd-Regular, AvertaStd, sans-serif;
+              top: 10px;
+              font-weight: 400;
+              color: #0E1D51;
+              line-height: 17px;
+              cursor: pointer;
+
+            }
+          }
+
+          .rate-btn {
+            padding: 0 6px;
+            height: 24px;
+            margin-left: 6px;
+            border-radius: 5px;
+            border: 1px solid #0E1D51;
+            font-size: 14px;
+            font-family: AvertaStd-Regular, AvertaStd;
+            font-weight: 400;
+            color: #0E1D51;
+            text-align: center;
+            line-height: 24px;
+            cursor: pointer;
+          }
+        }
+
+        .transaction-info {
+          .flex-box {
+            padding: 4px 0;
+
+            .name {
+              font-size: 12px;
+              font-family: AvertaStd-Regular, AvertaStd;
+              font-weight: 400;
+              color: #8F97AA;
+              line-height: 15px;
+            }
+
+            .value {
+              font-size: 12px;
+              font-family: AvertaStd-Regular, AvertaStd;
+              font-weight: 400;
+              color: #0E1D51;
+              line-height: 20px;
+            }
+          }
+        }
       }
     }
 
@@ -599,7 +886,7 @@ export default {
 
         .nav1-content, .nav2-content, .nav3-content, .nav4-content {
           .col {
-            padding: 0 15px;
+            padding: 0 0px;
             text-align: center;
 
             &:nth-child(1) {
@@ -669,7 +956,8 @@ export default {
               background: #63CE63;
               border-radius: 2px;
               color: #fff;
-              &.down{
+
+              &.down {
                 background: #E32A20;
               }
             }
@@ -820,181 +1108,7 @@ export default {
       }
     }
 
-    .left-content {
-      padding: 20px 15px;
-    }
 
-    .left-bottom {
-      border-top: 1px solid #ECECEE;
-      padding: 20px 15px;
-
-      .operate {
-        margin-top: 20px;
-        width: 100%;
-      }
-    }
-
-    .left-content-item {
-      margin-top: 16px;
-      width: 100%;
-
-      .box-title {
-        font-size: 14px;
-        font-family: AvertaStd-Regular, AvertaStd, sans-serif;
-        font-weight: 400;
-        color: #8F97AA;
-        line-height: 17px;
-        padding-bottom: 6px;
-      }
-
-      .input-box {
-        width: 100%;
-        height: 72px;
-        background: #F2F2F3;
-        border-radius: 18px;
-        overflow: hidden;
-        opacity: 0.7;
-        border: 1px solid #0E1D51;
-
-        .input-part {
-          width: 100%;
-          position: relative;
-          height: 50%;
-
-          input {
-            height: 100%;
-
-            width: 100%;
-            padding: 0 20px;
-          }
-
-          &:nth-child(1) {
-            input {
-              border-radius: 18px 18px 0 0;
-              border-bottom: 1px solid #0E1D51;;
-            }
-          }
-
-          &:nth-child(2) {
-            input {
-              border-radius: 0 0 18px 18px;
-            }
-          }
-
-          span {
-            position: absolute;
-            right: 10px;
-            font-size: 14px;
-            font-family: AvertaStd-Regular, AvertaStd, sans-serif;
-            top: 10px;
-            font-weight: 400;
-            color: #0E1D51;
-            line-height: 17px;
-          }
-        }
-      }
-
-      .progress-box {
-        display: flex;
-
-        .progress {
-          width: 300px;
-          height: 20px;
-          background-color: #f0f0f0;
-          border-radius: 10px;
-          cursor: pointer;
-        }
-
-        .progress-bar {
-          height: 100%;
-          background-color: #00aaff;
-          border-radius: 10px;
-        }
-
-        .reset {
-          width: 52px;
-          height: 20px;
-          border-radius: 13px;
-          border: 1px solid #0E1D51;
-          font-weight: 400;
-          color: #0E1D51;
-          line-height: 15px;
-          text-align: center;
-          cursor: pointer;
-        }
-      }
-
-      .slippage-box {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        .slippage-input {
-          position: relative;
-          width: 196px;
-          height: 34px;
-          background: #F6F6F7;
-          border-radius: 18px;
-          opacity: 0.7;
-          border: 1px solid #0E1D51;
-
-          input {
-            border-radius: 18px;
-            width: 100%;
-            height: 100%;
-          }
-
-          span {
-            position: absolute;
-            right: 10px;
-            font-size: 14px;
-            font-family: AvertaStd-Regular, AvertaStd, sans-serif;
-            top: 10px;
-            font-weight: 400;
-            color: #0E1D51;
-            line-height: 17px;
-            cursor: pointer;
-
-          }
-        }
-
-        .rate-btn {
-          padding: 0 6px;
-          height: 24px;
-          border-radius: 5px;
-          border: 1px solid #0E1D51;
-          font-size: 14px;
-          font-family: AvertaStd-Regular, AvertaStd;
-          font-weight: 400;
-          color: #0E1D51;
-          text-align: center;
-          line-height: 24px;
-          cursor: pointer;
-        }
-      }
-
-      .transaction-info {
-        .flex-box {
-          padding: 4px 0;
-
-          .name {
-            font-size: 12px;
-            font-family: AvertaStd-Regular, AvertaStd;
-            font-weight: 400;
-            color: #8F97AA;
-            line-height: 15px;
-          }
-
-          .value {
-            font-size: 12px;
-            font-family: AvertaStd-Regular, AvertaStd;
-            font-weight: 400;
-            color: #0E1D51;
-            line-height: 20px;
-          }
-        }
-      }
-    }
   }
 }
 </style>
