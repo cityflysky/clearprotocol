@@ -176,7 +176,7 @@
       <div class="right-content-box">
         <div class="right-part1">
           <div class="price">
-            65378.91
+            {{parseInt(coinInfo.index_price).toFixed(2)}}
           </div>
           <div class="funding">
             <div class="name">
@@ -184,10 +184,10 @@
             </div>
             <div class="value">
               <div class="rate">
-                0.02%
+                {{parseInt(coinInfo.funding_rate[0]).toFixed(2)}}%
               </div>
               <div class="time">
-                05:04:19
+                {{coinInfo.funding_time }}
               </div>
             </div>
           </div>
@@ -196,7 +196,7 @@
               24h Change
             </div>
             <div class="value">
-              598 +2.45%
+              {{ parseInt(coinInfo.chg_24h).toFixed(2) }} + {{parseInt(coinInfo.chg_24h_percent).toFixed(2)}}%
             </div>
           </div>
         </div>
@@ -427,6 +427,8 @@
 
 import MarginManage from "@/components/MarginManage";
 import ClosePositions from "@/components/ClosePositions";
+import { getTokenInfo} from "@/api/coinApi";
+let getPriceInterval = null
 export default {
   name: 'HomeView',
   components: {
@@ -435,6 +437,7 @@ export default {
   },
   data() {
     return {
+      tokenInfo:{},
       isShowClosePosition:false,
       isShowMarginManage:false,
       slideValue: 0,
@@ -444,23 +447,31 @@ export default {
       widgetHeight: 500,
       activeNav: 0,
       curTVSymbol: "BINANCE:BTCUSDT",
-      curSymbol: "BTC/USDT"
+      curSymbol: "BTC/USDT",
+      activeTokenName:"BTC",
+      coinInfo: {
+
+      }
       //  BINANCE:ETHUSDT
     }
   },
   methods: {
     handleMenuClick(e) {
-      let curTVSymbol = "", curSymbol = ""
+      let curTVSymbol = "", curSymbol = "",coinName=""
       if (e.key == 1) {
         curTVSymbol = "BINANCE:BTCUSDT"
         curSymbol = "BTC/USDT"
+        coinName = "BTC"
       } else if (e.key == 2) {
         curTVSymbol = "BINANCE:ETHUSDT"
         curSymbol = "ETH/USDT"
+        coinName = "ETH"
       }
       if (curTVSymbol != this.curTVSymbol) {
         this.curTVSymbol = curTVSymbol
         this.curSymbol = curSymbol
+        this.activeTokenName =coinName
+
         this.createWidget()
       }
     },
@@ -496,11 +507,38 @@ export default {
 
       }
     },
+    async getData(){
+      try{
+        // let priceRes = await getTokenPrices()
+        // let priceArr = priceRes.data.data
+        // console.log(priceArr)
+        let tokenInfoRes = await getTokenInfo()
+        let tokenInfo = tokenInfoRes.data.data
+        this.tokenInfo = tokenInfo
+        if(tokenInfo&&tokenInfo.tokens){
+          tokenInfo.tokens.forEach(token=>{
+            if(token.name==this.activeTokenName){
+              this.coinInfo=token
+            }
+          })
+        }
+      }catch (e) {
+        console.log(e)
+      }
 
+
+    }
   },
   mounted() {
     this.loadTradingViewScript();
-
+    this.getData()
+    getPriceInterval = setInterval(()=>{
+      this.getData()
+    },3000)
+  },
+  beforeDestroy() {
+    clearInterval(getPriceInterval)
+    getPriceInterval = null
   }
 }
 </script>
